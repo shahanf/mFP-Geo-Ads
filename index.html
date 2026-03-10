@@ -190,27 +190,6 @@
       }
     }
   </style>
-  <script>
-    // Prevent any extension or injected script from hiding page content
-    (function(){
-      var protect = function(){
-        document.querySelectorAll('body, body *').forEach(function(el){
-          var s = getComputedStyle(el);
-          if(s.display === 'none' || s.visibility === 'hidden' || s.opacity === '0'){
-            el.style.setProperty('display', '', 'important');
-            el.style.setProperty('visibility', 'visible', 'important');
-            el.style.setProperty('opacity', '1', 'important');
-          }
-        });
-      };
-      var mo = new MutationObserver(protect);
-      document.addEventListener('DOMContentLoaded', function(){
-        protect();
-        mo.observe(document.body, {attributes:true, childList:true, subtree:true, attributeFilter:['style','class']});
-      });
-      setInterval(protect, 500);
-    })();
-  </script>
 </head>
 <body>
 
