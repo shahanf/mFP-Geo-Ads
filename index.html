@@ -178,6 +178,17 @@
       position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
       width: 140px; height: 5px; background: rgba(255,255,255,0.2); border-radius: 10px; z-index: 200;
     }
+
+    /* Responsive: scale the mockup to fit small screens */
+    @media (max-width: 480px) {
+      body { padding: 20px 0 40px; }
+      .label { font-size: 9px; letter-spacing: 1.5px; margin-bottom: 16px; }
+      .iphone {
+        transform: scale(calc(100vw / 460));
+        transform-origin: top center;
+        margin-bottom: calc(-932px * (1 - (100vw / 460)));
+      }
+    }
   </style>
 </head>
 <body>
